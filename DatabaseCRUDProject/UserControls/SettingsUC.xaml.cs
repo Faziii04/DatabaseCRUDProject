@@ -21,7 +21,8 @@ namespace DatabaseCRUDProject.UserControls
             var current = GlobalVars.currentTheme ?? Application.Current.Resources.MergedDictionaries[0];
             string source = current.Source?.ToString() ?? string.Empty;
 
-            if (source.Contains("DatkTheme.xaml", StringComparison.OrdinalIgnoreCase))
+            if (source.Contains("DarkTheme.xaml", StringComparison.OrdinalIgnoreCase) ||
+                source.Contains("DatkTheme.xaml", StringComparison.OrdinalIgnoreCase))
             {
                 DarkThemeRadioButton.IsChecked = true;
             }
@@ -38,7 +39,7 @@ namespace DatabaseCRUDProject.UserControls
 
         private void DarkThemeRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            ApplyTheme("Themes/DatkTheme.xaml");
+            ApplyTheme("Themes/DarkTheme.xaml");
         }
 
         private void ApplyTheme(string themePath)

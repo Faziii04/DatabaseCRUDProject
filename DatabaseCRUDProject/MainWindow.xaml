@@ -4,19 +4,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#F5F5F5">
-        <Border Width="360" Padding="24" Background="White" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center">
+        Title="Login" Height="460" Width="860"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource MainBackgroundBrush}">
+    <Window.Resources>
+        <Style x:Key="PrimaryActionButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentHoverBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Border Width="390"
+                Padding="26"
+                Background="{DynamicResource CardBackgroundBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
             <StackPanel>
-                <TextBlock Text="Sign in" FontSize="24" FontWeight="SemiBold" Margin="0,0,0,20"/>
+                <TextBlock Text="Sign in"
+                           FontSize="26"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,8"/>
 
-                <TextBlock Text="CI" Margin="0,0,0,6"/>
-                <TextBox x:Name="CiTextBox" Height="34" Margin="0,0,0,14"/>
+                <TextBlock Text="Welcome back. Enter your credentials to continue."
+                           Foreground="{DynamicResource SecondaryTextBrush}"
+                           Margin="0,0,0,22"/>
 
-                <TextBlock Text="Password" Margin="0,0,0,6"/>
-                <PasswordBox x:Name="PasswordBox" Height="34" Margin="0,0,0,20"/>
+                <TextBlock Text="CI" Margin="0,0,0,6" FontWeight="SemiBold"/>
+                <TextBox x:Name="CiTextBox" Height="36" Margin="0,0,0,14"/>
 
-                <Button Content="Sign in" Height="36" Click="SignIn_Click"/>
+                <TextBlock Text="Password" Margin="0,0,0,6" FontWeight="SemiBold"/>
+                <PasswordBox x:Name="PasswordBox" Height="36" Margin="0,0,0,22"/>
+
+                <Button Content="Sign in"
+                        Height="40"
+                        Style="{StaticResource PrimaryActionButton}"
+                        Click="SignIn_Click"/>
             </StackPanel>
         </Border>
     </Grid>

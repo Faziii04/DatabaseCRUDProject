@@ -41,9 +41,9 @@ namespace DatabaseCRUDProject.UserControls
             _newUsers.Add(newUser);
             _users.Add(newUser);
 
-            UsersDataGrid.SelectedItem = newUser;
+            UsersDataGrid.SelectedItem = newUser; 
             UsersDataGrid.ScrollIntoView(newUser);
-            UsersDataGrid.CurrentCell = new DataGridCellInfo(newUser, UsersDataGrid.Columns[0]);
+            UsersDataGrid.CurrentCell = new DataGridCellInfo(newUser, UsersDataGrid.Columns[0]);    
             UsersDataGrid.BeginEdit();
         }
 

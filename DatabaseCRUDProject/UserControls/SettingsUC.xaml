@@ -6,32 +6,48 @@
              xmlns:local="clr-namespace:DatabaseCRUDProject.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="{DynamicResource ContentBackgroundBrush}">
-        <StackPanel>
-            <TextBlock Text="Settings"
-                       FontSize="22"
-                       FontWeight="SemiBold"
-                       Foreground="{DynamicResource PrimaryTextBrush}"
-                       Margin="0,0,0,16"/>
+    <Grid Background="{DynamicResource ContentBackgroundBrush}" Margin="8">
+        <Border Background="{DynamicResource CardBackgroundBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="14"
+                Padding="16">
+            <StackPanel>
+                <TextBlock Text="Settings"
+                           FontSize="22"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,16"/>
 
-            <TextBlock Text="Theme"
-                       FontSize="16"
-                       FontWeight="SemiBold"
-                       Foreground="{DynamicResource PrimaryTextBrush}"
-                       Margin="0,0,0,8"/>
+                <Border Background="{DynamicResource ControlBackgroundBrush}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="12"
+                        Padding="14">
+                    <StackPanel>
+                        <TextBlock Text="Theme"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Margin="0,0,0,4"/>
 
-            <StackPanel Orientation="Horizontal">
-                <RadioButton x:Name="LightThemeRadioButton"
-                             Content="Light"
-                             Margin="0,0,16,0"
-                             GroupName="ThemeSelection"
-                             Checked="LightThemeRadioButton_Checked"/>
+                        <TextBlock Text="Choose how the application looks."
+                                   Foreground="{DynamicResource SecondaryTextBrush}"
+                                   Margin="0,0,0,10"/>
 
-                <RadioButton x:Name="DarkThemeRadioButton"
-                             Content="Dark"
-                             GroupName="ThemeSelection"
-                             Checked="DarkThemeRadioButton_Checked"/>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="LightThemeRadioButton"
+                                         Content="Light"
+                                         Margin="0,0,18,0"
+                                         GroupName="ThemeSelection"
+                                         Checked="LightThemeRadioButton_Checked"/>
+
+                            <RadioButton x:Name="DarkThemeRadioButton"
+                                         Content="Dark"
+                                         GroupName="ThemeSelection"
+                                         Checked="DarkThemeRadioButton_Checked"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
             </StackPanel>
-        </StackPanel>
+        </Border>
     </Grid>
 </UserControl>
