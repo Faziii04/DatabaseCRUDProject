@@ -41,5 +41,15 @@ namespace DatabaseCRUDProject.Windows
         {
             DashboardContent.Content = new SettingsUC();
         }
+
+        private void UsersSpButton_Click(object sender, RoutedEventArgs e)
+        {
+            DashboardContent.Content = new UsersManagementSPUC();
+        }
+
+        private void LoginSimulationButton_Click(object sender, RoutedEventArgs e)
+        {
+            DashboardContent.Content = new LoginSimulation();
+        }
     }
 }

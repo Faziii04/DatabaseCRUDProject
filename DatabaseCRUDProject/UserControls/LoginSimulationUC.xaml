@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="DatabaseCRUDProject.UserControls.LoginSimulation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DatabaseCRUDProject.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{DynamicResource ContentBackgroundBrush}" Margin="8">
+        <Border Width="430"
+                Padding="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="{DynamicResource CardBackgroundBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="14">
+            <StackPanel>
+                <TextBlock Text="Login Simulation (Stored Procedure)"
+                           FontSize="22"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,14"/>
+
+                <TextBlock Text="CI" Margin="0,0,0,6" FontWeight="SemiBold"/>
+                <TextBox x:Name="CiTextBox" Height="36" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Password" Margin="0,0,0,6" FontWeight="SemiBold"/>
+                <PasswordBox x:Name="PasswordBox" Height="36" Margin="0,0,0,14"/>
+
+                <Button Content="Simulate Login"
+                        Height="40"
+                        Margin="0,0,0,14"
+                        Foreground="White"
+                        FontWeight="SemiBold"
+                        Background="{DynamicResource AccentBrush}"
+                        BorderBrush="{DynamicResource AccentHoverBrush}"
+                        Click="SimulateLoginButton_Click"/>
+
+                <TextBlock x:Name="ResultTextBlock"
+                           FontWeight="SemiBold"
+                           Text="Waiting for simulation..."
+                           Margin="0,0,0,8"/>
+
+                <Border Background="{DynamicResource ControlBackgroundBrush}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="10">
+                    <TextBlock x:Name="UserDetailsTextBlock"
+                               TextWrapping="Wrap"
+                               Foreground="{DynamicResource SecondaryTextBrush}"
+                               Text="No user data yet."/>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,5 +1,4 @@
 ﻿using DatabaseCRUDProject.Services;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -18,11 +17,7 @@ namespace DatabaseCRUDProject.UserControls
 
         private void LoadCurrentThemeState()
         {
-            var current = GlobalVars.currentTheme ?? Application.Current.Resources.MergedDictionaries[0];
-            string source = current.Source?.ToString() ?? string.Empty;
-
-            if (source.Contains("DarkTheme.xaml", StringComparison.OrdinalIgnoreCase) ||
-                source.Contains("DatkTheme.xaml", StringComparison.OrdinalIgnoreCase))
+            if (GlobalVars.CurrentTheme == AppTheme.Dark)
             {
                 DarkThemeRadioButton.IsChecked = true;
             }
@@ -34,22 +29,12 @@ namespace DatabaseCRUDProject.UserControls
 
         private void LightThemeRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            ApplyTheme("Themes/LightTheme.xaml");
+            GlobalVars.SetCurrentTheme(AppTheme.Light);
         }
 
         private void DarkThemeRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            ApplyTheme("Themes/DarkTheme.xaml");
-        }
-
-        private void ApplyTheme(string themePath)
-        {
-            ResourceDictionary theme = new ResourceDictionary
-            {
-                Source = new Uri(themePath, UriKind.Relative)
-            };
-
-            GlobalVars.SetCurrentTheme(theme);
+            GlobalVars.SetCurrentTheme(AppTheme.Dark);
         }
     }
 }

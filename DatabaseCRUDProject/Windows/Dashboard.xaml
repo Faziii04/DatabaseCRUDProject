@@ -55,6 +55,8 @@
                 <StackPanel Margin="0,8,0,0">
                     <Button Content="Home" Style="{StaticResource SidebarMenuButtonStyle}" Click="HomeButton_Click"/>
                     <Button Content="Users" Style="{StaticResource SidebarMenuButtonStyle}" Click="UsersButton_Click"/>
+                    <Button Content="Users (SP)" Style="{StaticResource SidebarMenuButtonStyle}" Click="UsersSpButton_Click"/>
+                    <Button Content="Login Sim" Style="{StaticResource SidebarMenuButtonStyle}" Click="LoginSimulationButton_Click"/>
                     <Button Content="Settings" Style="{StaticResource SidebarMenuButtonStyle}" Click="SettingsButton_Click"/>
                 </StackPanel>
             </DockPanel>
